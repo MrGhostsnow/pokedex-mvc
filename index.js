@@ -4,11 +4,11 @@ const res = require("express/lib/response");
 const path = require("path");
 const { fileURLToPath } = require("url");
 const app = express();
-let message = "";
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 const pokedex = [
     {
@@ -60,11 +60,7 @@ const pokedex = [
 
 
 app.get("/", (req, res) => {
-  setTimeout(() => {
-       message = "";     
-  }, 1000);
-  
-    res.render("index.ejs" , {pokedex, message});
+    res.render("index.ejs" , {pokedex});
 });
 
 app.get("/index.ejs", (req, res)=>{
@@ -79,20 +75,9 @@ app.get("/index.ejs", (req, res)=>{
     const pokemon = req.body;
     pokemon.id = pokedex.length + 1;
     pokedex.push(pokemon);
-    message = "Pokémon criado com sucesso";
     res.redirect("index.ejs")
  });
  
-//  app.get("/detalhes/:id", (req, res) =>{
-//       let pokemon = [] 
-//        pokedex.filter((element) => {
-//            if(element.id == req.params.id){
-//                pokemon.push(element.id);
-//            } 
-//         console.log(pokemon)
-//         })
-//         res.render("detalhes.ejs" , {pokemon})
-//     });
 
  app.get("/detalhes/:id", (req, res) => {
        const id = req.params.id;
