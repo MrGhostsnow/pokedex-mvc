@@ -1,3 +1,3 @@
-# Pokédex - Projeto 2 - Módulo 2
+<h1 align="center"> Pokédex - Projeto 2  </h1>
 
-h2 Descrição h2
+Descrição 
