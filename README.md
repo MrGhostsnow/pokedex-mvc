@@ -11,4 +11,4 @@
   <li>EJS</li>
 </ul>
 
-<a href="https://www.linkedin.com/in/victor-silva-teixeira-b9a4391a3/" target=blanke>Linkedin</a>
+<a href="https://www.linkedin.com/in/victor-silva-teixeira-b9a4391a3/" target=blanke_>Linkedin</a>
