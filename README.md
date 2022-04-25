@@ -1,1 +1,1 @@
-# pokedex-mvc
+# Pokédex - Projeto 2 - Módulo 2
