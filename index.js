@@ -1,10 +1,11 @@
+require("dotenv").config();
 const { application } = require("express");
 const express = require("express");
 const res = require("express/lib/response");
 const path = require("path");
 const { fileURLToPath } = require("url");
 const app = express();
-const port = 3000 || "https://git.heroku.com/infinite-basin-60241.git"
+const port = process.env.PORT || 3000; 
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
